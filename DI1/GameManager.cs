@@ -6,6 +6,7 @@ public class GameManager
 
     public RoundResult PlayRound()
     {
+        //1/ Player 1 (Человек)
         Choice p1;
         do
         {
@@ -28,10 +29,12 @@ public class GameManager
 
         } while(true);
 
+        //2/ Player 2 (Компьютер)
         Choice p2 = (Choice)_rng.Next(0, 3);
         Console.WriteLine($"\nPlayer 2 picked {p2.ToString()}");
 
-        if(p1 == p2)
+        //3/ Определение победителя
+        if (p1 == p2)
         {
             return RoundResult.Drow;
         }
